@@ -1,8 +1,4 @@
-use crate::bus::Bus;
-
-mod bus;
-
-struct Poly_Z80
+struct Poly_Z80<'a>
 {
     accumulator:u8,
     b_register:u8,
@@ -27,7 +23,6 @@ struct Poly_Z80
     /// stack pointer
     sp:u16,
     opcode:u8,
-    bus:Bus
 }
 
 impl Poly_Z80
@@ -52,13 +47,12 @@ impl Poly_Z80
             pc: 0,
             sp: 0,
             opcode: 0,
-            bus: ()
         }
     }
 
     fn fetch()
     {
-        
+
     }
 
     fn imm_addressing()
