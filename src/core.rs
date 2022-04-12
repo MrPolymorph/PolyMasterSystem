@@ -1,4 +1,8 @@
-struct poly_z80
+use crate::bus::Bus;
+
+mod bus;
+
+struct Poly_Z80
 {
     accumulator:u8,
     b_register:u8,
@@ -22,17 +26,47 @@ struct poly_z80
     pc:u16,
     /// stack pointer
     sp:u16,
-    opcode:u8
+    opcode:u8,
+    bus:Bus
 }
 
-impl poly_z80
+impl Poly_Z80
 {
+    fn new() -> Poly_Z80
+    {
+        Poly_Z80 {
+            accumulator: 0,
+            b_register: 0,
+            c_register: 0,
+            d_register: 0,
+            e_register: 0,
+            f_register: 0,
+            h_register: 0,
+            l_register: 0,
+            i_register: 0,
+            r_register: 0,
+            ixh_register: 0,
+            ixl_register: 0,
+            iyh_register: 0,
+            iyl_register: 0,
+            pc: 0,
+            sp: 0,
+            opcode: 0,
+            bus: ()
+        }
+    }
+
     fn fetch()
     {
         
     }
 
     fn imm_addressing()
+    {
+
+    }
+
+    fn connect_to_bus(bus: Bus)
     {
 
     }
